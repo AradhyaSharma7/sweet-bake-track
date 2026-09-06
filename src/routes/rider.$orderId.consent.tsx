@@ -23,7 +23,7 @@ export const Route = createFileRoute("/rider/$orderId/consent")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  component: RiderConsent;
+  component: RiderConsent,
 });
 
 function RiderConsent() {
