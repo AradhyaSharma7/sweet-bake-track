@@ -7,9 +7,9 @@ export type CartLine = {
   price: number;
   imageKey: string;
   quantity: number;
-  flavour?: string;
-  weight?: string;
-  designNotes?: string;
+  flavour?: string | undefined;
+  weight?: string | undefined;
+  designNotes?: string | undefined;
 };
 
 type CartContextValue = {
