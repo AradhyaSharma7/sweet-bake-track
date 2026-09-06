@@ -4,7 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, categorySlug } from "@/lib/product-images";
 import { productsQuery } from "@/lib/queries";
 
-export const Route = createFileRoute("/shop")({
+export const Route = createFileRoute("/shop/")({
   head: () => ({
     meta: [
       { title: "Shop the counter — Nathan's Bakery" },
