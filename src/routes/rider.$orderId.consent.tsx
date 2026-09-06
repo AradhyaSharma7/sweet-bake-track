@@ -91,10 +91,10 @@ function RiderConsent() {
 
   const balance = Math.max(0, form.total_amount - form.advance_paid);
 
-  async function save() {
+  async function save(): Promise<void> {
     if (!checks.acknowledged || !customerSignature) {
       toast.error("The customer must acknowledge and sign the form");
-      return;
+      return undefined;
     }
     setBusy(true);
     const { error } = await supabase.from("consent_forms").upsert(
@@ -115,7 +115,8 @@ function RiderConsent() {
     );
     if (error) {
       setBusy(false);
-      return toast.error(error.message);
+      toast.error(error.message);
+      return undefined;
     }
     await supabase.from("orders").update({ status: "delivered" }).eq("id", orderId);
     await supabase
@@ -248,7 +249,7 @@ function RiderConsent() {
       <section className="mt-8 grid gap-6">
         <div className="grid gap-2">
           <Label>Customer signature</Label>
-          <SignaturePad onChange={setCustomerSignature} />
+          <SignaturePad label="Customer signature" value={customerSignature} onChange={setCustomerSignature} />
           <Input
             value={signedName}
             onChange={(e) => setSignedName(e.target.value)}
@@ -257,7 +258,7 @@ function RiderConsent() {
         </div>
         <div className="grid gap-2">
           <Label>Bakery representative signature</Label>
-          <SignaturePad onChange={setRepSignature} />
+          <SignaturePad label="Bakery representative signature" value={repSignature} onChange={setRepSignature} />
         </div>
       </section>
 

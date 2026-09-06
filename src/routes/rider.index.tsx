@@ -87,13 +87,13 @@ function RiderPage() {
     );
   }
 
-  async function claim(order: Row) {
+  async function claim(order: Row): Promise<void> {
     if (!user) return;
     const { error } = await supabase
       .from("orders")
       .update({ rider_id: user.id, status: "out_for_delivery" })
       .eq("id", order.id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     await supabase
       .from("deliveries")
       .update({
@@ -107,10 +107,10 @@ function RiderPage() {
     load();
   }
 
-  async function startSharing(order: Row) {
+  async function startSharing(order: Row): Promise<void> {
     const delivery = order.deliveries?.[0];
-    if (!delivery) return toast.error("No delivery record for this order");
-    if (!navigator.geolocation) return toast.error("This device can't share a location");
+    if (!delivery) { toast.error("No delivery record for this order"); return; }
+    if (!navigator.geolocation) { toast.error("This device can't share a location"); return; }
 
     await supabase.from("deliveries").update({ is_sharing: true }).eq("id", delivery.id);
     setSharingId(order.id);
