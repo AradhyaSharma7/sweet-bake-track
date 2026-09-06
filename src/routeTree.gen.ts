@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConsentOrderIdRouteImport } from './routes/consent.$orderId'
+import { Route as OrdersIndexRouteImport } from './routes/orders.index'
+import { Route as ProductSlugRouteImport } from './routes/product.$slug'
+import { Route as RiderIndexRouteImport } from './routes/rider.index'
+import { Route as ShopIndexRouteImport } from './routes/shop.index'
+import { Route as ShopCategoryRouteImport } from './routes/shop.$category'
+import { Route as OrdersOrderIdTrackRouteImport } from './routes/orders.$orderId.track'
+import { Route as RiderOrderIdConsentRouteImport } from './routes/rider.$orderId.consent'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsentOrderIdRoute = ConsentOrderIdRouteImport.update({
+  id: '/consent/$orderId',
+  path: '/consent/$orderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersIndexRoute = OrdersIndexRouteImport.update({
+  id: '/orders/',
+  path: '/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductSlugRoute = ProductSlugRouteImport.update({
+  id: '/product/$slug',
+  path: '/product/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderIndexRoute = RiderIndexRouteImport.update({
+  id: '/rider/',
+  path: '/rider/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopCategoryRoute = ShopCategoryRouteImport.update({
+  id: '/shop/$category',
+  path: '/shop/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersOrderIdTrackRoute = OrdersOrderIdTrackRouteImport.update({
+  id: '/orders/$orderId/track',
+  path: '/orders/$orderId/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderOrderIdConsentRoute = RiderOrderIdConsentRouteImport.update({
+  id: '/rider/$orderId/consent',
+  path: '/rider/$orderId/consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/consent/$orderId': typeof ConsentOrderIdRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/rider/': typeof RiderIndexRoute
+  '/shop/': typeof ShopIndexRoute
+  '/orders/$orderId/track': typeof OrdersOrderIdTrackRoute
+  '/rider/$orderId/consent': typeof RiderOrderIdConsentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/consent/$orderId': typeof ConsentOrderIdRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/orders': typeof OrdersIndexRoute
+  '/rider': typeof RiderIndexRoute
+  '/shop': typeof ShopIndexRoute
+  '/orders/$orderId/track': typeof OrdersOrderIdTrackRoute
+  '/rider/$orderId/consent': typeof RiderOrderIdConsentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/consent/$orderId': typeof ConsentOrderIdRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/shop/$category': typeof ShopCategoryRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/rider/': typeof RiderIndexRoute
+  '/shop/': typeof ShopIndexRoute
+  '/orders/$orderId/track': typeof OrdersOrderIdTrackRoute
+  '/rider/$orderId/consent': typeof RiderOrderIdConsentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/cart'
+    | '/checkout'
+    | '/contact'
+    | '/consent/$orderId'
+    | '/product/$slug'
+    | '/shop/$category'
+    | '/orders/'
+    | '/rider/'
+    | '/shop/'
+    | '/orders/$orderId/track'
+    | '/rider/$orderId/consent'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/cart'
+    | '/checkout'
+    | '/contact'
+    | '/consent/$orderId'
+    | '/product/$slug'
+    | '/shop/$category'
+    | '/orders'
+    | '/rider'
+    | '/shop'
+    | '/orders/$orderId/track'
+    | '/rider/$orderId/consent'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/cart'
+    | '/checkout'
+    | '/contact'
+    | '/consent/$orderId'
+    | '/product/$slug'
+    | '/shop/$category'
+    | '/orders/'
+    | '/rider/'
+    | '/shop/'
+    | '/orders/$orderId/track'
+    | '/rider/$orderId/consent'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ContactRoute: typeof ContactRoute
+  ConsentOrderIdRoute: typeof ConsentOrderIdRoute
+  ProductSlugRoute: typeof ProductSlugRoute
+  ShopCategoryRoute: typeof ShopCategoryRoute
+  OrdersIndexRoute: typeof OrdersIndexRoute
+  RiderIndexRoute: typeof RiderIndexRoute
+  ShopIndexRoute: typeof ShopIndexRoute
+  OrdersOrderIdTrackRoute: typeof OrdersOrderIdTrackRoute
+  RiderOrderIdConsentRoute: typeof RiderOrderIdConsentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consent/$orderId': {
+      id: '/consent/$orderId'
+      path: '/consent/$orderId'
+      fullPath: '/consent/$orderId'
+      preLoaderRoute: typeof ConsentOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/': {
+      id: '/orders/'
+      path: '/orders'
+      fullPath: '/orders/'
+      preLoaderRoute: typeof OrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$slug': {
+      id: '/product/$slug'
+      path: '/product/$slug'
+      fullPath: '/product/$slug'
+      preLoaderRoute: typeof ProductSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/': {
+      id: '/rider/'
+      path: '/rider'
+      fullPath: '/rider/'
+      preLoaderRoute: typeof RiderIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/': {
+      id: '/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$category': {
+      id: '/shop/$category'
+      path: '/shop/$category'
+      fullPath: '/shop/$category'
+      preLoaderRoute: typeof ShopCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/$orderId/track': {
+      id: '/orders/$orderId/track'
+      path: '/orders/$orderId/track'
+      fullPath: '/orders/$orderId/track'
+      preLoaderRoute: typeof OrdersOrderIdTrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/$orderId/consent': {
+      id: '/rider/$orderId/consent'
+      path: '/rider/$orderId/consent'
+      fullPath: '/rider/$orderId/consent'
+      preLoaderRoute: typeof RiderOrderIdConsentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
+  ContactRoute: ContactRoute,
+  ConsentOrderIdRoute: ConsentOrderIdRoute,
+  ProductSlugRoute: ProductSlugRoute,
+  ShopCategoryRoute: ShopCategoryRoute,
+  OrdersIndexRoute: OrdersIndexRoute,
+  RiderIndexRoute: RiderIndexRoute,
+  ShopIndexRoute: ShopIndexRoute,
+  OrdersOrderIdTrackRoute: OrdersOrderIdTrackRoute,
+  RiderOrderIdConsentRoute: RiderOrderIdConsentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
